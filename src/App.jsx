@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-
 import ListaNoticias from './components/ListaNoticias';
 import SearchBox from './components/SearchBox';
 // import FiltrosBox from './components/FiltrosBox';
 import NewsRest from './data/datanews';
 import { categorias, paises } from './data/data';
 import Select from 'react-select';
+
 
 
 
@@ -19,6 +19,7 @@ class App extends Component {
     query: '',
     pais: 'us',
     categoria: '',
+  
     
   }
 
@@ -49,7 +50,7 @@ class App extends Component {
 
   setCountry = (option) => {
     this.setState({
-      country: option.value
+      pais: option.value
     });
   }
   setCategory = (option) => {
@@ -68,7 +69,7 @@ class App extends Component {
             WORLD NEWS
          </h1>
         </header>
-
+       
         <Select options={paises} placeholder='Select country' onChange={this.setCountry} />
         <div style={{ height: "10px" }} />
         <Select options={categorias} placeholder='Select category' onChange={this.setCategory} />
